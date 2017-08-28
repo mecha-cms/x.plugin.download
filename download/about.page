@@ -1,0 +1,64 @@
+---
+title: Download
+description: Download links.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.0
+dependency: {"extension":["asset","block","page"]}
+...
+
+Provides a download link with security token to prevent hotlinking. This plugin will also count the number of downloads.
+
+### Usage
+
+Store your files in the folder related to your download page:
+
+~~~ .txt
+lot\
+ └── page\
+     ├── my-page\
+     │   ├── file-1.zip
+     │   ├── file-2.zip
+     │   └── folder-1\
+     │       ├── file-1-1.zip
+     │       └── file-1-2.zip
+     └── my-page.page
+~~~
+
+Then show the download link this way in `my-page.page`:
+
+~~~ .txt
+[‌[‌download path="file-1.zip"‌]‌]
+~~~
+
+~~~ .txt
+[‌[‌download path="folder-1/file-1-1.zip"‌]‌]
+~~~
+
+### Options
+
+#### Hide Download Counter
+
+~~~ .txt
+[‌[‌download path="file.zip" count="false"‌]‌]
+~~~
+
+#### Hide Download File’s Name
+
+~~~ .txt
+[‌[‌download path="file.zip" source="false"‌]‌]
+~~~
+
+#### Custom Download Text
+
+~~~ .txt
+[‌[‌download path="file.zip"‌]‌]Download File: %{source}%[‌[‌/‌download‌]‌]
+~~~
+
+#### External Link
+
+~~~ .txt
+[‌[‌download link="http://example.com/file.zip" size="125 KB"‌]‌]
+~~~
+
+<!-- block:donate -->

@@ -1,0 +1,8 @@
+---
+type: YAML
+...
+
+message_error_download_file: File does not exist.
+message_error_download_token: Invalid download token.
+
+message_info_download_count: Downloaded %{0}% times!

@@ -1,0 +1,8 @@
+---
+type: YAML
+...
+
+message_error_download_file: Berkas sudah tidak ada.
+message_error_download_token: Token pengunduhan tidak valid.
+
+message_info_download_count: Diunduh sebanyak %{0}% kali!
