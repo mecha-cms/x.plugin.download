@@ -3,8 +3,13 @@ title: Download
 description: Download links.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.0.0
-dependency: {"extension":["asset","block","page"]}
+version: 1.0.1
+
+dependency:
+  extension:
+    - asset
+    - block
+    - page
 ...
 
 Provides a download link with security token to prevent hotlinking. This plugin will also count the number of downloads.

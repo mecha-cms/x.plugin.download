@@ -150,7 +150,7 @@ Block::set($id, function($content, $lot = []) use($id, $language, $state, $url) 
         );
         // Other(s) will be treated as normal HTML attribute(s)…
         $b = array_replace_recursive([
-            'classes' => [$id, $id . '--' . ($internal ? 'path' : 'link')],
+            'class[]' => [$id, $id . '--' . ($internal ? 'path' : 'link')],
             'id' => $id . ':' . md5($k),
             'title' => $count_s && $count_s > 0 ? $language->message_info_download_count($count_s) : null
         ], $b);
