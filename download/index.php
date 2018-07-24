@@ -6,7 +6,7 @@ $state = (array) Plugin::state(__DIR__);
 $test = explode('/', $url->path);
 $test_file = array_pop($test);
 $test_x = Path::X($test_file);
-$test_token = Guardian::check(Request::get('token', ""), $id);
+$test_token = Guardian::check(HTTP::get('token', ""), $id);
 
 $path = implode('/', $test);
 
@@ -58,7 +58,7 @@ if (!$test_token && $test_x && $file) {
         } else {
             $counter[$test_file] = 1;
         }
-        File::write(To::json($counter))->saveTo($data, 0600);
+        File::set(To::JSON($counter))->saveTo($data, 0600);
         Hook::set('on.' . $id . '.set', [
             $data,
             $data,
@@ -70,14 +70,14 @@ if (!$test_token && $test_x && $file) {
         ]);
         exit;
     // External link…
-    } else if ($to = Request::get('to')) {
+    } else if ($to = HTTP::get('to')) {
         // Counting the downloads…
         if (isset($counter[$to])) {
             $counter[$to] = $counter[$to] + 1;
         } else {
             $counter[$to] = 1;
         }
-        File::write(To::json($counter))->saveTo($data, 0600);
+        File::set(To::JSON($counter))->saveTo($data, 0600);
         Hook::set('on.' . $id . '.set', [
             $data,
             $data,
